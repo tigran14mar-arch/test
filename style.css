@@ -1,0 +1,95 @@
+/* Общие настройки */
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(-45deg, #1e3c72, #2a5298, #6a11cb, #2575fc);
+    background-size: 400% 400%;
+    animation: gradientBG 10s ease infinite;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* Анимация фона */
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Заголовок */
+.title {
+    color: white;
+    margin-bottom: 40px;
+    animation: fadeIn 2s ease forwards;
+    opacity: 0;
+}
+
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+
+/* Карточка */
+.card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    color: white;
+    width: 300px;
+    transition: 0.4s ease;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    position: relative;
+    z-index: 2;
+}
+
+/* Эффект при наведении */
+.card:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 0 30px rgba(255,255,255,0.6);
+}
+
+/* Кнопка */
+.card button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    background: white;
+    color: #2575fc;
+    transition: 0.3s;
+}
+
+.card button:hover {
+    background: #2575fc;
+    color: white;
+}
+
+/* Светящийся шар */
+.glow-ball {
+    width: 120px;
+    height: 120px;
+    background: radial-gradient(circle, #ffffff, #00ffff, #0066ff);
+    border-radius: 50%;
+    position: absolute;
+    bottom: 50px;
+    right: 50px;
+    animation: pulse 2s infinite ease-in-out;
+    box-shadow: 0 0 40px #00ffff,
+                0 0 80px #0066ff,
+                0 0 120px #00ffff;
+}
+
+/* Пульсация шара */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
